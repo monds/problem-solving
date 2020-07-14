@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -23,7 +24,10 @@ public class _784Test {
 
     @Test
     public void test() {
-        List<String> res = Arrays.asList("a1b2", "a1B2", "A1b2", "A1B2");
-        assertThat(solution.letterCasePermutation("a1b2"), is(res));
+        List<String> actual = solution.letterCasePermutation("a1b2");
+        List<String> expected = Arrays.asList("a1b2", "a1B2", "A1b2", "A1B2");
+        Collections.sort(actual);
+        Collections.sort(expected);
+        assertThat(actual, is(expected));
     }
 }

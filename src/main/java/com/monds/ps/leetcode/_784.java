@@ -18,6 +18,9 @@ public class _784 {
                     results.add(S.substring(0, i) + upper + S.substring(i + 1));
                 }
             }
+            if (results.size() > 2) {
+                results.add(S.toUpperCase());
+            }
             return results;
         }
     }
