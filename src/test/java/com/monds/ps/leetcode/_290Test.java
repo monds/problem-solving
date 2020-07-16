@@ -20,5 +20,9 @@ public class _290Test {
     @Test
     public void test() {
         assertTrue(solution.wordPattern("abba", "dog cat cat dog"));
+        assertFalse(solution.wordPattern("abba", "dog dog dog dog"));
+        assertFalse(solution.wordPattern("abba", "dog cat cat fish"));
+        assertTrue(solution.wordPattern("ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccdd",
+                "s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s t t"));
     }
 }

@@ -8,15 +8,18 @@ import java.util.HashMap;
 public class _290 {
     static class Solution {
         public boolean wordPattern(String pattern, String str) {
-            String[] arr = str.split(" ");
-            HashMap<Character, String> map = new HashMap<>();
+            String[] words = str.split(" ");
+            if (pattern.length() != words.length) return false;
+
+            HashMap<Object, Integer> map = new HashMap<>();
             for (int i = 0; i < pattern.length(); i++) {
                 char c = pattern.charAt(i);
-                String s = arr[i];
-                String check = map.get(c);
-                if (check == null) {
-                    map.put(c, s);
-                } else if (!s.equals(check)) {
+                String w = words[i];
+
+                map.putIfAbsent(c, i);
+                map.putIfAbsent(w, i);
+
+                if (map.get(c).intValue() != map.get(w).intValue()) {
                     return false;
                 }
             }
