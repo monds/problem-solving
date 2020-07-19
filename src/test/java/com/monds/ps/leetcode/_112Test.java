@@ -17,14 +17,7 @@ public class _112Test {
 
     @Test
     public void test() {
-        TreeNode root = new TreeNode(5, new TreeNode(4), new TreeNode(8));
-        TreeNode node11 = new TreeNode(11, new TreeNode(7), new TreeNode(2));
-        root.left.left = node11;
-
-        TreeNode node13 = new TreeNode(13);
-        root.right.left = node13;
-        root.right.right = new TreeNode(4);
-        root.right.right.right = new TreeNode(1);
+        TreeNode root = TreeNode.fromArray(new int[] {5,4,8,11,-999,13,4,7,2,-999,-999,-999,1});
 
         assertTrue(solution.hasPathSum(root, 22));
     }
