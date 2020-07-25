@@ -23,11 +23,20 @@ public class QuickSort {
         }
     }
 
+    /**
+     * partition
+     * @param arr 정렬 대상 배열
+     * @param start 시작 포인터
+     * @param end 끝 포인터
+     * @return 옮겨진 시작 포인터 위치
+     */
     private static int partition(int[] arr, int start, int end) {
+        // 임의의 pivot 기준 설정
         int pivot = arr[(start + end) / 2];
         while (start <= end) {
             while (arr[start] < pivot) start++;
             while (arr[end] > pivot) end--;
+            // start 와 end 가 엇갈리지 않는지 체크
             if (start <= end) {
                 swap(arr, start, end);
                 start++;
