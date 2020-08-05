@@ -1,23 +1,23 @@
 package com.monds.ps.leetcode;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class _1Test {
 
     private _1.Solution solution;
 
-    @Before
+    @BeforeEach
     public void setup() {
         solution = new _1.Solution();
     }
 
     @Test
     public void test() {
-        assertArrayEquals(solution.twoSum(new int[] {2,7,11,15}, 9), new int[] {0,1});
-        assertArrayEquals(solution.twoSum(new int[] {-1,-2,-3,-4,-5}, -8), new int[] {2,4});
+        assertThat(solution.twoSum(new int[] {2,7,11,15}, 9)).isEqualTo(new int[] {0,1});
+        assertThat(solution.twoSum(new int[] {-1,-2,-3,-4,-5}, -8)).isEqualTo(new int[] {2,4});
     }
 
 }

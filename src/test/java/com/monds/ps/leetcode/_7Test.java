@@ -1,23 +1,23 @@
 package com.monds.ps.leetcode;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class _7Test {
 
     private _7.Solution solution;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         solution = new _7.Solution();
     }
 
     @Test
     public void test() {
-        assertEquals(solution.reverse(123), 321);
-        assertEquals(solution.reverse(-123), -321);
-        assertEquals(solution.reverse(120), 21);
+        assertThat(solution.reverse(123)).isEqualTo(321);
+        assertThat(solution.reverse(-123)).isEqualTo(-321);
+        assertThat(solution.reverse(120)).isEqualTo(21);
     }
 }
