@@ -1,9 +1,9 @@
 package com.monds.ps.leetcode;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Created by suahn on 2020-07-09
@@ -12,17 +12,17 @@ public class _20Test {
 
     private _20.Solution solution;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         solution = new _20.Solution();
     }
 
     @Test
     public void test() {
-        assertTrue(solution.isValid("()"));
-        assertTrue(solution.isValid("()[]{}"));
-        assertFalse(solution.isValid("(]"));
-        assertFalse(solution.isValid("([)]"));
-        assertTrue(solution.isValid("{[]}"));
+        assertThat(solution.isValid("()")).isTrue();
+        assertThat(solution.isValid("()[]{}")).isTrue();
+        assertThat(solution.isValid("(]")).isFalse();
+        assertThat(solution.isValid("([)]")).isFalse();
+        assertThat(solution.isValid("{[]}")).isTrue();
     }
 }
