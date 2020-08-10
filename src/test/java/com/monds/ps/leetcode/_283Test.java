@@ -1,9 +1,9 @@
 package com.monds.ps.leetcode;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Created by suahn on 2020-07-14
@@ -12,15 +12,15 @@ public class _283Test {
 
     private _283.Solution solution;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         solution = new _283.Solution();
     }
 
     @Test
     public void test() {
-        int[] arr = new int[] {0,1,0,3,12};
+        int[] arr = {0,1,0,3,12};
         solution.moveZeroes(arr);
-        assertArrayEquals(arr, new int[] {1,3,12,0,0});
+        assertThat(arr).isEqualTo(new int[] {1,3,12,0,0});
     }
 }

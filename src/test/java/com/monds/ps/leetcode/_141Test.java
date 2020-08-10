@@ -1,15 +1,15 @@
 package com.monds.ps.leetcode;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class _141Test {
 
     private _141.Solution solution;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         solution = new _141.Solution();
     }
@@ -23,6 +23,6 @@ public class _141Test {
         n1.next.next = new ListNode(-4);
         n1.next.next.next = n1;
 
-        assertTrue(solution.hasCycle(head));
+        assertThat(solution.hasCycle(head)).isTrue();
     }
 }

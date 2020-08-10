@@ -1,26 +1,23 @@
 package com.monds.ps.leetcode;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import java.time.Duration;
-import java.time.Instant;
-
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class _204Test {
 
     private _204.Solution solution;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         solution = new _204.Solution();
     }
 
     @Test
     public void test() {
-        assertEquals(solution.countPrimes(10), 4);
-        assertEquals(solution.countPrimes(2), 0);
+        assertThat(solution.countPrimes(10)).isEqualTo(4);
+        assertThat(solution.countPrimes(2)).isEqualTo(0);
         // 150000 test
     }
 }

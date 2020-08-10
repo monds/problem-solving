@@ -1,22 +1,22 @@
 package com.monds.ps.leetcode;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class _234Test {
 
     private _234.Solution solution;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         solution = new _234.Solution();
     }
 
     @Test
     public void test() {
-        assertFalse(solution.isPalindrome(ListNode.fromArray(new int[] {1,2})));
-        assertTrue(solution.isPalindrome(ListNode.fromArray(new int[] {1,2,2,1})));
+        assertThat(solution.isPalindrome(ListNode.fromArray(new int[] {1,2}))).isFalse();
+        assertThat(solution.isPalindrome(ListNode.fromArray(new int[] {1,2,2,1}))).isTrue();
     }
 }

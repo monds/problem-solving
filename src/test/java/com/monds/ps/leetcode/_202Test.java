@@ -1,9 +1,9 @@
 package com.monds.ps.leetcode;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Created by suahn on 2020-07-17
@@ -12,13 +12,13 @@ public class _202Test {
 
     private _202.Solution solution;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         solution = new _202.Solution();
     }
 
     @Test
     public void test() {
-        assertTrue(solution.isHappy(19));
+        assertThat(solution.isHappy(19)).isTrue();
     }
 }

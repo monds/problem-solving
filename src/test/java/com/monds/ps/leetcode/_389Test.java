@@ -1,22 +1,22 @@
 package com.monds.ps.leetcode;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class _389Test {
 
     private _389.Solution solution;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         solution = new _389.Solution();
     }
 
     @Test
     public void test() {
-        assertEquals(solution.findTheDifference("abcd", "abcde"), 'e');
-        assertEquals(solution.findTheDifference("", "y"), 'y');
+        assertThat(solution.findTheDifference("abcd", "abcde")).isEqualTo('e');
+        assertThat(solution.findTheDifference("", "y")).isEqualTo('y');
     }
 }

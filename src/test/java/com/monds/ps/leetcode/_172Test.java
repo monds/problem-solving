@@ -1,9 +1,9 @@
 package com.monds.ps.leetcode;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Created by suahn on 2020-07-06
@@ -12,15 +12,15 @@ public class _172Test {
 
     private _172.Solution solution;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         solution = new _172.Solution();
     }
 
     @Test
     public void test() {
-        assertEquals(solution.trailingZeroes(3), 0);
-        assertEquals(solution.trailingZeroes(5), 1);
-        assertEquals(solution.trailingZeroes(29), 6);
+        assertThat(solution.trailingZeroes(3)).isEqualTo(0);
+        assertThat(solution.trailingZeroes(5)).isEqualTo(1);
+        assertThat(solution.trailingZeroes(29)).isEqualTo(6);
     }
 }

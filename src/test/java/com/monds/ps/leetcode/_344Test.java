@@ -1,9 +1,9 @@
 package com.monds.ps.leetcode;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Created by suahn on 2020-07-12
@@ -12,15 +12,15 @@ public class _344Test {
 
     private _344.Solution solution;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         solution = new _344.Solution();
     }
 
     @Test
     public void test() {
-        char[] arr1 = new char[] {'h','e','l','l','o'};
+        char[] arr1 = {'h','e','l','l','o'};
         solution.reverseString(arr1);
-        assertArrayEquals(arr1, new char[] {'o','l','l','e','h'});
+        assertThat(arr1).isEqualTo(new char[] {'o','l','l','e','h'});
     }
 }

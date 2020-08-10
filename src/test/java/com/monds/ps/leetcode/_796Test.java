@@ -1,23 +1,23 @@
 package com.monds.ps.leetcode;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class _796Test {
 
     private _796.Solution solution;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         solution = new _796.Solution();
     }
 
     @Test
     public void test() {
-        assertTrue(solution.rotateString("abcde", "cdeab"));
-        assertFalse(solution.rotateString("abcde", "abced"));
-        assertTrue(solution.rotateString("bbbacddceeb", "ceebbbbacdd"));
+        assertThat(solution.rotateString("abcde", "cdeab")).isTrue();
+        assertThat(solution.rotateString("abcde", "abced")).isFalse();
+        assertThat(solution.rotateString("bbbacddceeb", "ceebbbbacdd")).isTrue();
     }
 }

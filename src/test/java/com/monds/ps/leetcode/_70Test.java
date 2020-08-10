@@ -1,22 +1,22 @@
 package com.monds.ps.leetcode;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class _70Test {
 
     private _70.Solution solution;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         solution = new _70.Solution();
     }
 
     @Test
     public void test() {
-        assertEquals(solution.climbStairs(2), 2);
-        assertEquals(solution.climbStairs(3), 3);
+        assertThat(solution.climbStairs(2)).isEqualTo(2);
+        assertThat(solution.climbStairs(3)).isEqualTo(3);
     }
 }

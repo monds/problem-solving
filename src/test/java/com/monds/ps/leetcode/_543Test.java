@@ -1,15 +1,15 @@
 package com.monds.ps.leetcode;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class _543Test {
 
     private _543.Solution solution;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         solution = new _543.Solution();
     }
@@ -17,6 +17,6 @@ public class _543Test {
     @Test
     public void test() {
         TreeNode root = TreeNode.fromArray(new int[] {1,2,3,4,5,-999,-999});
-        assertEquals(solution.diameterOfBinaryTree(root), 3);
+        assertThat(solution.diameterOfBinaryTree(root)).isEqualTo(3);
     }
 }
