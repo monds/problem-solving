@@ -1,28 +1,23 @@
 package com.monds.ps.programmers;
 
+import java.util.Stack;
+
 public class CreateLargeNumber {
     public String solution(String number, int k) {
-        int len = number.length() - k - 1;
-        int start = 0;
-        StringBuilder sb = new StringBuilder();
-        while (sb.length() < number.length() - k) {
-            start = largestAt(number, start, len--);
-            sb.append(number.charAt(start));
-            start += 1;
-        }
+        char[] result = new char[number.length() - k];
+        Stack<Character> stack = new Stack<>();
 
-        return sb.toString();
-    }
-
-    private int largestAt(String number, int start, int k) {
-        int pos = start;
-        int len = number.length();
-        for (int i = 9; i >= 0; i--) {
-            pos = number.indexOf(Character.forDigit(i, 10), start);
-            if (pos != -1 && pos < len - k) {
-                break;
+        for (char c : number.toCharArray()) {
+            while (!stack.isEmpty() && stack.peek() < c && k-- > 0) {
+                stack.pop();
             }
+            stack.push(c);
         }
-        return pos;
+
+        for (int i = 0; i < result.length; i++) {
+            result[i] = stack.get(i);
+        }
+
+        return new String(result);
     }
 }
