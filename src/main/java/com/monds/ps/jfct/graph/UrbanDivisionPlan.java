@@ -1,11 +1,12 @@
 package com.monds.ps.jfct.graph;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-public class Kruskal {
-
+public class UrbanDivisionPlan {
+    
     private static class Node {
         private final int from;
         private final int to;
@@ -48,31 +49,36 @@ public class Kruskal {
         // 간선(엣지) 비용 순으로 정렬
         nodes.sort(Comparator.comparingInt(o -> o.cost));
 
-        int result = 0;
+        int max = 0;
+        int sum = 0;
         for (Node node : nodes) {
             // 사이클 방지
             if (findParent(parent, node.from) != findParent(parent, node.to)) {
                 unionParent(parent, node.from, node.to);
-                result += node.cost;
+                max = Math.max(max, node.cost);
+                sum += node.cost;
             }
         }
 
-        return result;
+        return sum - max;
     }
 
     public static void main(String[] args) {
-        int[][] edges = {
-            {1, 2, 29},
-            {1, 5, 75},
-            {2, 3, 35},
-            {2, 6, 34},
-            {3, 4, 7},
-            {4, 6, 23},
-            {4, 7, 13},
-            {5, 6, 53},
-            {6, 7, 25}
+        int[][] input = {
+            {1, 2, 3},
+            {1, 3, 2},
+            {3, 2, 1},
+            {2, 5, 2},
+            {3, 4, 4},
+            {7, 3, 6},
+            {5, 1, 5},
+            {1, 6, 2},
+            {6, 4, 1},
+            {6, 5, 3},
+            {4, 5, 3},
+            {6, 7, 4}
         };
 
-        System.out.println(Kruskal.solution(7, edges));
+        System.out.println(solution(7, input));
     }
 }
