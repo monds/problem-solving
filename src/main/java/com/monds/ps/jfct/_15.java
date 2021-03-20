@@ -55,5 +55,19 @@ public class _15 {
         };
 
         _15.solution(4, 4, 2, 1, graph);
+
+        System.out.println();
+        int[][] graph2 = {
+            {1, 2}, {1, 3}, {1, 4}
+        };
+
+        _15.solution(4, 3, 2, 1, graph2);
+
+        System.out.println();
+        int[][] graph3 = {
+            {1, 2}, {1, 3}, {2, 3}, {2, 4}
+        };
+
+        _15.solution(4, 4, 1,1, graph);
     }
 }
