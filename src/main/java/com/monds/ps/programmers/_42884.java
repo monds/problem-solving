@@ -3,6 +3,11 @@ package com.monds.ps.programmers;
 import java.util.Arrays;
 import java.util.Comparator;
 
+/**
+ * 단속카메라
+ *
+ * @see <a href="https://programmers.co.kr/learn/courses/30/lessons/42884">문제링크</a>
+ */
 public class _42884 {
     public int solution(int[][] routes) {
         int answer = 1;

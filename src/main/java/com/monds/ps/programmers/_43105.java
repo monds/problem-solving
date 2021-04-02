@@ -1,5 +1,10 @@
 package com.monds.ps.programmers;
 
+/**
+ * 정수 삼각형
+ *
+ * @see <a href="https://programmers.co.kr/learn/courses/30/lessons/43105">문제링크</a>
+ */
 public class _43105 {
     public int solution(int[][] triangle) {
         if (triangle.length == 1) return triangle[0][0];
