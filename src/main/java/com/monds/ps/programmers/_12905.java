@@ -1,6 +1,6 @@
 package com.monds.ps.programmers;
 
-public class FindTheLargestSquare {
+public class _12905 {
     public int solution(int[][] board) {
         int answer = 0;
         int width = board[0].length;
@@ -13,6 +13,7 @@ public class FindTheLargestSquare {
             }
         }
 
+        // ←,↖,↑를 보고 정사각형을 만들 수 있는 위치라면 최대 변의 길이를 넣어준다고 생각하고 점화식을 만들어보자
         for (int i = 1; i <= height; i++) {
             for (int j = 1; j <= width; j++) {
                 if (map[i][j] == 0) continue;

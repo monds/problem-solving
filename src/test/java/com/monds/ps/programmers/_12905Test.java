@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class FindTheLargestSquareTest {
+class _12905Test {
 
     @Test
     void solution() {
@@ -16,6 +16,6 @@ class FindTheLargestSquareTest {
                 {0,0,1,0}
         };
 
-        assertThat(new FindTheLargestSquare().solution(board)).isEqualTo(9);
+        assertThat(new _12905().solution(board)).isEqualTo(9);
     }
 }
