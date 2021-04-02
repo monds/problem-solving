@@ -3,9 +3,8 @@ package com.monds.ps.programmers;
 public class Network {
     public int solution(int n, int[][] computers) {
         int answer = 0;
-        int len = computers.length;
-        boolean[] visits = new boolean[len];
-        for (int i = 0; i < len; i++) {
+        boolean[] visits = new boolean[n];
+        for (int i = 0; i < n; i++) {
             if (visits[i]) continue;
             dfs(computers, visits, i, i);
             // 이어진 컴퓨터를 모두 찾고 1 증가
